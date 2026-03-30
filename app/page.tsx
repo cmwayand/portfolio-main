@@ -116,114 +116,108 @@ export default function Page() {
         <SiteHeader />
 
         <section className="relative z-10 mx-auto max-w-7xl pl-6 pr-10 pt-12 pb-20 sm:pl-10 sm:pr-14 sm:pb-24 sm:pt-16 md:pl-12 md:pr-20 md:pt-20 md:pb-28 lg:pl-16 lg:pr-24 lg:pt-24 xl:pl-20 xl:pr-28">
-          <div className="grid w-full grid-cols-1 gap-10 sm:grid-cols-[minmax(0,26rem)_auto] sm:items-start sm:justify-start sm:gap-x-5 sm:gap-y-2.5 md:gap-x-6 lg:gap-x-8">
-            <h1 className="mx-auto mb-0 max-w-[26rem] text-balance text-center text-3xl font-bold leading-[1.15] tracking-tight text-neutral-950 sm:col-start-1 sm:row-start-1 sm:mx-0 sm:text-left sm:text-4xl md:text-[2.65rem]">
-              Product Designer and UX Strategist
-            </h1>
+          <div className="grid w-full grid-cols-1 items-center gap-10 sm:grid-cols-[minmax(0,26rem)_minmax(0,1fr)] sm:gap-x-8 md:gap-x-10 lg:gap-x-12">
+            <div className="mx-auto w-full max-w-[26rem] text-center sm:mx-0 sm:text-left">
+              <h1 className="mb-0 text-balance text-3xl font-bold leading-[1.15] tracking-tight text-neutral-950 sm:text-4xl md:text-[2.65rem]">
+                Product Designer and UX Strategist
+              </h1>
 
-            <p className="mx-auto mt-2 max-w-[24rem] text-pretty text-center text-base leading-relaxed text-neutral-500 sm:col-start-1 sm:row-start-2 sm:mx-0 sm:mt-0 sm:text-left sm:text-lg">
-              I design end-to-end experiences for{" "}
-              <strong className="font-semibold text-neutral-900">
-                B2B SaaS and web products
-              </strong>
-              , from discovery through launch — including{" "}
-              <strong className="font-semibold text-neutral-900">
-                AI-assisted workflows
-              </strong>{" "}
-              that stay usable, trustworthy, and on-brand.
-            </p>
+              <p className="mx-auto mt-2 max-w-[24rem] text-pretty text-base leading-relaxed text-neutral-500 sm:mx-0 sm:mt-2 sm:text-lg">
+                I design end-to-end experiences for{" "}
+                <strong className="font-semibold text-neutral-900">
+                  B2B SaaS and web products
+                </strong>
+                , from discovery through launch — including{" "}
+                <strong className="font-semibold text-neutral-900">
+                  AI-assisted workflows
+                </strong>{" "}
+                that stay usable, trustworthy, and on-brand.
+              </p>
 
-            <div className="mx-auto mt-5 flex max-w-[26rem] flex-wrap justify-center gap-2 sm:col-start-1 sm:row-start-3 sm:mx-0 sm:mt-3 sm:justify-start">
-              {[
-                "# UX",
-                "# B2B SaaS",
-                "# AI",
-                "# Design systems",
-                "# Mobile",
-                "# Web design",
-                "# Custom code",
-              ].map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full bg-neutral-100 px-3.5 py-1.5 text-xs font-medium text-neutral-600 sm:text-sm"
+              <div className="mx-auto mt-5 flex max-w-[26rem] flex-wrap justify-center gap-2 sm:mx-0 sm:mt-5 sm:justify-start">
+                {[
+                  "# UX",
+                  "# B2B SaaS",
+                  "# AI",
+                  "# Design systems",
+                  "# Mobile",
+                  "# Web design",
+                  "# Custom code",
+                ].map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full bg-neutral-100 px-3.5 py-1.5 text-xs font-medium text-neutral-600 sm:text-sm"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mx-auto mt-6 flex max-w-[26rem] flex-col items-center sm:mx-0 sm:mt-7 sm:items-start">
+                <button
+                  type="button"
+                  onClick={handleDownload}
+                  disabled={
+                    downloadStatus === "loading" || downloadStatus === "success"
+                  }
+                  className="relative inline-flex min-h-[44px] items-center justify-center gap-2 overflow-hidden rounded-full bg-neutral-950 px-8 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-60"
                 >
-                  {tag}
-                </span>
-              ))}
-            </div>
-
-            <div className="mx-auto mt-3 flex max-w-[26rem] flex-col items-center sm:col-start-1 sm:row-start-4 sm:mx-0 sm:mt-2 sm:items-start">
-              <button
-                type="button"
-                onClick={handleDownload}
-                disabled={
-                  downloadStatus === "loading" || downloadStatus === "success"
-                }
-                className="relative inline-flex min-h-[44px] items-center justify-center gap-2 overflow-hidden rounded-full bg-neutral-950 px-8 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-60"
-              >
-                {downloadStatus === "loading" && (
-                  <motion.div
-                    className="absolute inset-0 bg-white/15"
-                    initial={{ width: 0 }}
-                    animate={{ width: `${progress}%` }}
-                    transition={{ duration: 0.08 }}
-                  />
-                )}
-                {downloadStatus === "success" && (
-                  <motion.div
-                    className="absolute inset-0 bg-emerald-600"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                  />
-                )}
-                <span className="relative z-10 flex items-center gap-2">
-                  {downloadStatus === "success" ? (
-                    <>
-                      <Check className="h-4 w-4" />
-                      Downloaded
-                    </>
-                  ) : downloadStatus === "loading" ? (
-                    <>
-                      <Download className="h-4 w-4 animate-pulse" />
-                      Downloading… {progress}%
-                    </>
-                  ) : (
-                    <>
-                      <Download className="h-4 w-4" />
-                      Download resume
-                    </>
+                  {downloadStatus === "loading" && (
+                    <motion.div
+                      className="absolute inset-0 bg-white/15"
+                      initial={{ width: 0 }}
+                      animate={{ width: `${progress}%` }}
+                      transition={{ duration: 0.08 }}
+                    />
                   )}
-                </span>
-              </button>
-              {downloadStatus === "loading" && (
-                <div className="mt-3 h-1 w-full max-w-[240px] overflow-hidden rounded-full bg-neutral-200 sm:max-w-[200px]">
-                  <motion.div
-                    className="h-full bg-neutral-400/80"
-                    initial={{ width: 0 }}
-                    animate={{ width: `${progress}%` }}
-                    transition={{ duration: 0.08 }}
-                  />
-                </div>
-              )}
+                  {downloadStatus === "success" && (
+                    <motion.div
+                      className="absolute inset-0 bg-emerald-600"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                    />
+                  )}
+                  <span className="relative z-10 flex items-center gap-2">
+                    {downloadStatus === "success" ? (
+                      <>
+                        <Check className="h-4 w-4" />
+                        Downloaded
+                      </>
+                    ) : downloadStatus === "loading" ? (
+                      <>
+                        <Download className="h-4 w-4 animate-pulse" />
+                        Downloading… {progress}%
+                      </>
+                    ) : (
+                      <>
+                        <Download className="h-4 w-4" />
+                        Download resume
+                      </>
+                    )}
+                  </span>
+                </button>
+                {downloadStatus === "loading" && (
+                  <div className="mt-3 h-1 w-full max-w-[240px] overflow-hidden rounded-full bg-neutral-200 sm:max-w-[200px]">
+                    <motion.div
+                      className="h-full bg-neutral-400/80"
+                      initial={{ width: 0 }}
+                      animate={{ width: `${progress}%` }}
+                      transition={{ duration: 0.08 }}
+                    />
+                  </div>
+                )}
+              </div>
             </div>
 
-            {/* Right: avatar + tools strip (/icons.png), no card frame; nudged beside subtext (sm+) */}
-            <div className="relative mx-auto flex w-full max-w-[20rem] shrink-0 flex-col items-center sm:col-start-2 sm:row-start-2 sm:row-span-3 sm:mx-0 sm:w-auto sm:max-w-none sm:items-start">
+            <div className="flex w-full justify-center sm:justify-end sm:-translate-x-[150px]">
               <motion.img
-                src="/claire.png"
-                alt="Claire Wayand"
-                className="h-32 w-32 rounded-full object-cover sm:h-36 sm:w-36 md:h-40 md:w-40"
+                src="/icons.png"
+                alt="Claire Wayand and design tools"
+                className="h-auto w-full max-w-[min(100%,11rem)] object-contain sm:max-w-[12.1rem] md:max-w-[14.3rem] lg:max-w-[16.5rem]"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45 }}
               />
-              <div className="mt-1 w-full max-w-[14.5rem] -translate-y-2 translate-x-1 sm:mt-0 sm:max-w-[17rem] sm:-translate-y-[184px] sm:translate-x-[100px] md:max-w-[18rem]">
-                <img
-                  src="/icons.png"
-                  alt="Design tools and platforms Claire uses"
-                  className="h-auto w-full object-contain object-left"
-                />
-              </div>
             </div>
           </div>
         </section>

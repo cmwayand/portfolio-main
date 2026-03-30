@@ -7,6 +7,7 @@ import "yet-another-react-lightbox/styles.css";
 import ProjectCarousel from "@/components/ProjectCarousel";
 import HeroPageShell from "@/components/HeroPageShell";
 import CaseStudyTitle from "@/components/CaseStudyTitle";
+import CaseStudyPasswordGate from "@/components/CaseStudyPasswordGate";
 import { Sparkles, Clock, MessageCircle, Workflow } from "lucide-react";
 import { CASE_STUDY_GATE_PASSWORD } from "@/lib/caseStudyGate";
 
@@ -66,54 +67,15 @@ export default function SavingBuilders() {
   // Password protection screen
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-blue-50 flex items-center justify-center px-8">
-        <div className="max-w-md w-full">
-          <div className="bg-white border-2 border-gray-300 rounded-lg p-8 shadow-lg">
-            <h1 className="text-2xl font-bold mb-4 text-center" style={{ color: '#0E4D88' }}>Password Required</h1>
-            <p className="text-gray-600 mb-6 text-center">
-              This page is password protected. Please enter the password to continue.
-            </p>
-            
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => {
-                    setPassword(e.target.value);
-                    setError('');
-                  }}
-                  placeholder="Enter password"
-                  className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg bg-white text-black focus:outline-none"
-                  onFocus={(e) => {
-                    e.currentTarget.style.borderColor = '#0E4D88';
-                    e.currentTarget.style.boxShadow = '0 0 0 2px rgba(14, 77, 136, 0.2)';
-                  }}
-                  onBlur={(e) => {
-                    e.currentTarget.style.borderColor = '';
-                    e.currentTarget.style.boxShadow = '';
-                  }}
-                  autoFocus
-                />
-              </div>
-              
-              {error && (
-                <p className="text-red-500 text-sm text-center">{error}</p>
-              )}
-              
-              <button
-                type="submit"
-                className="w-full px-4 py-2 text-white rounded-lg transition-colors"
-                style={{ backgroundColor: '#0E4D88' }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#0a3d6b'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#0E4D88'}
-              >
-                Access Page
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
+      <CaseStudyPasswordGate
+        password={password}
+        onPasswordChange={(value) => {
+          setPassword(value);
+          setError('');
+        }}
+        error={error}
+        onSubmit={handleSubmit}
+      />
     );
   }
 

@@ -7,6 +7,9 @@ const nextConfig = {
   },
   webpack: (config, { dev }) => {
     if (dev) {
+      // Avoid flaky webpack filesystem cache (ENOENT renames) when the IDE or
+      // multiple processes touch `.next` — a common cause of 404s on JS chunks.
+      config.cache = { type: "memory" };
       config.watchOptions = {
         ...config.watchOptions,
         poll: 1000,
