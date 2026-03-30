@@ -1,0 +1,376 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { useState } from "react";
+import { Download, Check } from "lucide-react";
+import SiteHeader from "@/components/SiteHeader";
+
+const TESTIMONIALS = [
+  {
+    quote:
+      "A rare blend of creativity and strategy. Claire brings intentionality, warmth, and a deep commitment to excellence to everything she builds. She doesn't just deliver high-quality work; she elevates the ideas and teams around her",
+    name: "Sejal S.",
+    role: "Product Designer",
+  },
+  {
+    quote:
+      "Claire's evolution as a designer is marked by creativity, curiosity, and a deep focus on the end-user. She conquers challenges with grace, consistently delivering outstanding work while maintaining an inspiring, collaborative, and adaptable attitude.",
+    name: "Amy L.",
+    role: "Product Designer",
+  },
+  {
+    quote:
+      "Claire is a talented designer with a powerful entrepreneurial spirit. From concept to market launch, she combines data-driven research with a willingness to take calculated risks. Her well-rounded skill set and 'people-first' approach make her an invaluable asset to both startups and established corporations.",
+    name: "Robert C.",
+    role: "Product Owner",
+  },
+  {
+    quote:
+      "In her transition from graphic to product design, Claire has made incredible strides. Her design background gives her a unique edge in UI, while her commitment to research ensures a top-tier user experience. Even in high-pressure environments, her positive energy makes her an amazing teammate.",
+    name: "Mari G.",
+    role: "Product Designer",
+  },
+  {
+    quote:
+      "Claire is a lifelong learner who consistently steps beyond her core role to support her team. She actively seeks feedback and applies it with precision, demonstrating a powerful growth mindset. Her sense of ownership and collaborative spirit make her a premier asset to any product design team.",
+    name: "Von C.",
+    role: "Mobile Product Designer",
+  },
+  {
+    quote:
+      "Claire joined our mobile team when our designer went on sabbatical and immediately synergized with everyone. She quickly adapted to our mobile standards, even in the midst of several in-progress projects. She is a great team player who is always ready to hit the ground running and learns new things exceptionally quickly!",
+    name: "Eric S.",
+    role: "Product Manager",
+  },
+] as const;
+
+export default function Page() {
+  const [downloadStatus, setDownloadStatus] = useState<'idle' | 'loading' | 'success'>('idle');
+  const [progress, setProgress] = useState(0);
+
+  const handleDownload = () => {
+    if (downloadStatus === 'loading' || downloadStatus === 'success') return;
+    
+    setDownloadStatus('loading');
+    setProgress(0);
+
+    // Simulate download progress
+    const interval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          clearInterval(interval);
+          setDownloadStatus('success');
+          
+          // Trigger actual PDF download
+          const link = document.createElement('a');
+          link.href = "/CLAIRE_WAYAND_UX%3AUI_DESIGNER_RESUME.pdf";
+          link.download = "Claire_Wayand_UX_UI_Designer_Resume.pdf";
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          
+          // Reset after 2 seconds
+          setTimeout(() => {
+            setDownloadStatus('idle');
+            setProgress(0);
+          }, 2000);
+          return 100;
+        }
+        return prev + 2;
+      });
+    }, 30);
+  };
+
+  return (
+    <div className="min-h-screen bg-white text-neutral-900">
+      {/* Hero + nav: mesh gradient, wide margins, reference-style layout */}
+      <div className="relative overflow-hidden bg-white">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-100"
+          aria-hidden
+        >
+          <div
+            className="absolute -top-32 left-[10%] h-[420px] w-[520px] rounded-full blur-[100px]"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(165, 155, 240, 0.72) 0%, transparent 72%)",
+            }}
+          />
+          <div
+            className="absolute -top-24 right-[5%] h-[380px] w-[480px] rounded-full blur-[90px]"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(245, 185, 215, 0.66) 0%, transparent 72%)",
+            }}
+          />
+          <div
+            className="absolute top-0 left-1/2 h-[360px] w-[600px] -translate-x-1/2 rounded-full blur-[110px]"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(140, 205, 235, 0.62) 0%, transparent 70%)",
+            }}
+          />
+        </div>
+
+        <SiteHeader />
+
+        <section className="relative z-10 mx-auto max-w-7xl pl-6 pr-10 pt-12 pb-20 sm:pl-10 sm:pr-14 sm:pb-24 sm:pt-16 md:pl-12 md:pr-20 md:pt-20 md:pb-28 lg:pl-16 lg:pr-24 lg:pt-24 xl:pl-20 xl:pr-28">
+          <div className="grid w-full grid-cols-1 gap-10 sm:grid-cols-[minmax(0,26rem)_auto] sm:items-start sm:justify-start sm:gap-x-5 sm:gap-y-2.5 md:gap-x-6 lg:gap-x-8">
+            <h1 className="mx-auto mb-0 max-w-[26rem] text-balance text-center text-3xl font-bold leading-[1.15] tracking-tight text-neutral-950 sm:col-start-1 sm:row-start-1 sm:mx-0 sm:text-left sm:text-4xl md:text-[2.65rem]">
+              Product Designer and UX Strategist
+            </h1>
+
+            <p className="mx-auto mt-2 max-w-[24rem] text-pretty text-center text-base leading-relaxed text-neutral-500 sm:col-start-1 sm:row-start-2 sm:mx-0 sm:mt-0 sm:text-left sm:text-lg">
+              I design end-to-end experiences for{" "}
+              <strong className="font-semibold text-neutral-900">
+                B2B SaaS and web products
+              </strong>
+              , from discovery through launch — including{" "}
+              <strong className="font-semibold text-neutral-900">
+                AI-assisted workflows
+              </strong>{" "}
+              that stay usable, trustworthy, and on-brand.
+            </p>
+
+            <div className="mx-auto mt-5 flex max-w-[26rem] flex-wrap justify-center gap-2 sm:col-start-1 sm:row-start-3 sm:mx-0 sm:mt-3 sm:justify-start">
+              {[
+                "# UX",
+                "# B2B SaaS",
+                "# AI",
+                "# Design systems",
+                "# Mobile",
+                "# Web design",
+                "# Custom code",
+              ].map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full bg-neutral-100 px-3.5 py-1.5 text-xs font-medium text-neutral-600 sm:text-sm"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <div className="mx-auto mt-3 flex max-w-[26rem] flex-col items-center sm:col-start-1 sm:row-start-4 sm:mx-0 sm:mt-2 sm:items-start">
+              <button
+                type="button"
+                onClick={handleDownload}
+                disabled={
+                  downloadStatus === "loading" || downloadStatus === "success"
+                }
+                className="relative inline-flex min-h-[44px] items-center justify-center gap-2 overflow-hidden rounded-full bg-neutral-950 px-8 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-60"
+              >
+                {downloadStatus === "loading" && (
+                  <motion.div
+                    className="absolute inset-0 bg-white/15"
+                    initial={{ width: 0 }}
+                    animate={{ width: `${progress}%` }}
+                    transition={{ duration: 0.08 }}
+                  />
+                )}
+                {downloadStatus === "success" && (
+                  <motion.div
+                    className="absolute inset-0 bg-emerald-600"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                  />
+                )}
+                <span className="relative z-10 flex items-center gap-2">
+                  {downloadStatus === "success" ? (
+                    <>
+                      <Check className="h-4 w-4" />
+                      Downloaded
+                    </>
+                  ) : downloadStatus === "loading" ? (
+                    <>
+                      <Download className="h-4 w-4 animate-pulse" />
+                      Downloading… {progress}%
+                    </>
+                  ) : (
+                    <>
+                      <Download className="h-4 w-4" />
+                      Download resume
+                    </>
+                  )}
+                </span>
+              </button>
+              {downloadStatus === "loading" && (
+                <div className="mt-3 h-1 w-full max-w-[240px] overflow-hidden rounded-full bg-neutral-200 sm:max-w-[200px]">
+                  <motion.div
+                    className="h-full bg-neutral-400/80"
+                    initial={{ width: 0 }}
+                    animate={{ width: `${progress}%` }}
+                    transition={{ duration: 0.08 }}
+                  />
+                </div>
+              )}
+            </div>
+
+            {/* Right: avatar + tools strip (/icons.png), no card frame; nudged beside subtext (sm+) */}
+            <div className="relative mx-auto flex w-full max-w-[20rem] shrink-0 flex-col items-center sm:col-start-2 sm:row-start-2 sm:row-span-3 sm:mx-0 sm:w-auto sm:max-w-none sm:items-start">
+              <motion.img
+                src="/claire.png"
+                alt="Claire Wayand"
+                className="h-32 w-32 rounded-full object-cover sm:h-36 sm:w-36 md:h-40 md:w-40"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45 }}
+              />
+              <div className="mt-1 w-full max-w-[14.5rem] -translate-y-2 translate-x-1 sm:mt-0 sm:max-w-[17rem] sm:-translate-y-[184px] sm:translate-x-[100px] md:max-w-[18rem]">
+                <img
+                  src="/icons.png"
+                  alt="Design tools and platforms Claire uses"
+                  className="h-auto w-full object-contain object-left"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      {/* Recent Work Section */}
+      <section id="work" className="px-6 sm:px-10 lg:px-16 xl:px-20 py-8 sm:py-12 md:py-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="p-6 sm:p-8 md:p-10">
+            <h2 className="mb-6 text-left text-2xl font-bold tracking-tight text-neutral-950 sm:mb-8 sm:text-3xl md:text-4xl">
+              Recent Work
+            </h2>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+              {(
+                [
+                  {
+                    href: "/ios-app",
+                    img: "/roomsparkcover.png",
+                    imgAlt: "iOS app project",
+                    title:
+                      "RoomSpark: Defining the Standard for the $830B Home Transformation Industry.",
+                    desc: "How I built and launched an entire AI iOS app from discovery to MVP release",
+                    date: "April 2025 - Present",
+                  },
+                  {
+                    href: "/client-dashboard",
+                    img: "/dashboard.png",
+                    imgAlt: "Client dashboard project",
+                    title:
+                      "Improving the client dashboard and reducing churn by 28%",
+                    desc: "Transforming the client dashboard from a static data repository into a high-engagement, intuitive experience that fosters transparency and trust.",
+                    date: "November 2023 - February 2024",
+                  },
+                  {
+                    href: "/saving-builders",
+                    img: "coverclientupdates.png",
+                    imgAlt: "Saving builders project",
+                    title:
+                      "How I Saved Builders 115 Hours & Improved Completion Time by 97%",
+                    desc: "Using AI to generate automatic updates for clients, improving communication, and saving them 6+ hours a week.",
+                    date: "August 2024 - January 2025",
+                  },
+                  {
+                    href: "/builders-updates",
+                    img: "websitedesign.png",
+                    imgAlt: "Builders updates project",
+                    title: "Marketing, Web Design and Digital Graphics",
+                    desc: "Marketing design for CoConstruct, Buildertrend and other digital freelance work",
+                    date: "February 2021 - Present",
+                  },
+                ] as const
+              ).map((project) => (
+                <Link
+                  key={project.href}
+                  href={project.href}
+                  className="group block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2"
+                >
+                  <article className="flex h-full flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:border-neutral-400 hover:shadow-md">
+                    <div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden bg-neutral-100">
+                      <img
+                        src={project.img}
+                        alt={project.imgAlt}
+                        className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                      />
+                      <div
+                        className="pointer-events-none absolute inset-0 bg-neutral-950/0 transition-colors duration-300 group-hover:bg-neutral-950/45"
+                        aria-hidden
+                      />
+                    </div>
+                    <div className="flex flex-1 flex-col border-t border-neutral-100 p-5 sm:p-6">
+                      <h3 className="mb-2 text-xl font-bold leading-snug text-neutral-950 transition-colors group-hover:text-neutral-800 sm:text-2xl sm:leading-snug">
+                        {project.title}
+                      </h3>
+                      <p className="mb-4 flex-1 text-sm leading-relaxed text-neutral-600 sm:text-base">
+                        {project.desc}
+                      </p>
+                      <p className="text-xs text-neutral-500 sm:text-sm">
+                        {project.date}
+                      </p>
+                    </div>
+                  </article>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Company logos — below Recent Work */}
+      <section className="px-6 sm:px-10 lg:px-16 xl:px-20 py-8 sm:py-12 md:py-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid max-w-2xl grid-cols-3 items-center justify-items-center gap-4 sm:gap-8 md:mx-auto md:max-w-none md:flex md:flex-wrap md:justify-center md:gap-12 lg:gap-20">
+            <a href="https://madisonauto.org/" target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-110">
+              <img src="maap.png" alt="MAAP" className="h-10 w-auto rounded border border-gray-300 opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 sm:h-12 md:h-16" />
+            </a>
+            <a href="https://www.coconstruct.com/" target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-110">
+              <img src="coconstruct.png" alt="CoConstruct" className="h-10 w-auto opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 sm:h-12 md:h-16" />
+            </a>
+            <a href="https://buildertrend.com/" target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-110">
+              <img src="buildertrend.png" alt="Buildertrend" className="h-10 w-auto opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 sm:h-12 md:h-16" />
+            </a>
+            <a href="https://www.shifthq.ai/" target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-110">
+              <img src="shiftai.png" alt="SHIFT" className="h-10 w-auto rounded border border-gray-300 opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 sm:h-12 md:h-16" />
+            </a>
+            <a href="https://www.wavydogdesign.com/" target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-110">
+              <img src="wavydogdesign.png" alt="Wavy Dog Design" className="h-10 w-auto opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 sm:h-12 md:h-16" />
+            </a>
+            <a href="https://www.cargolabs.com/" target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-110">
+              <img src="cargolabs.png" alt="Cargo Labs" className="h-10 w-auto rounded border border-gray-300 opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 sm:h-12 md:h-16" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials — three per row on large screens; no carousel */}
+      <section
+        className="px-6 sm:px-10 lg:px-16 xl:px-20 py-8 sm:py-12 md:py-16 bg-white"
+        aria-label="Testimonials"
+      >
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 md:mb-12">
+            Testimonials
+          </h2>
+          <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+            {TESTIMONIALS.map((t, index) => (
+              <li key={`${t.name}-${index}`} className="min-w-0">
+                <article className="flex h-full flex-col rounded-lg border border-neutral-200 bg-neutral-50 p-5 shadow-sm sm:p-6">
+                  <div className="mb-3 flex gap-0.5" aria-hidden>
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-lg text-yellow-400 sm:text-xl">
+                        ★
+                      </span>
+                    ))}
+                  </div>
+                  <p className="mb-4 flex-1 text-pretty text-sm italic leading-relaxed text-neutral-700 sm:text-base">
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                  <p className="text-sm font-semibold text-neutral-900">
+                    {t.name}
+                  </p>
+                  <p className="text-xs text-neutral-500">{t.role}</p>
+                </article>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    </div>
+  );
+}
