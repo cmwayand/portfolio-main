@@ -20,6 +20,7 @@ export default function ClientDashboard() {
   // All images on the page for unified lightbox
   const allImages = [
     { src: '/dashboard.png', alt: 'Client dashboard cover' },
+    { src: '/blankdashboard.png', alt: 'Before: client portal dashboard' },
     { src: 'data.png', alt: 'Data visualization' },
     { src: 'interviews1.png', alt: 'User interviews' },
     { src: 'interviewsphotos.png', alt: 'Interview photos' },
@@ -84,7 +85,7 @@ export default function ClientDashboard() {
     <div className="min-h-screen bg-white overflow-x-hidden text-neutral-900">
       <HeroPageShell>
         <div className="max-w-6xl mx-auto">
-          <a href="/" className="text-[#0E4D88] hover:underline mb-8 inline-block">← Back to Home</a>
+          <a href="/" className="mb-8 inline-block text-sm font-medium text-neutral-600 hover:text-neutral-900 hover:underline">← Back to Home</a>
           
           {/* Header */}
           <div className="mb-12">
@@ -114,14 +115,14 @@ export default function ClientDashboard() {
 
           {/* Project Overview */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-6" style={{ color: '#2A78C0' }}>Project Overview</h2>
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-neutral-950">Project Overview</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 Reimagined the client dashboard to prioritize intuitive navigation and functional efficiency, directly increasing platform trust and user satisfaction for both builders and clients
               </p>
               <div className="grid md:grid-cols-2 gap-6 mt-8">
                 <div>
-                  <h3 className="text-lg font-semibold mb-2" style={{ color: '#0E4D88' }}>Team</h3>
+                  <h3 className="text-lg font-semibold mb-2 text-neutral-950">Team</h3>
                   <p className="text-gray-700">
                     Product manager<br />
                     Product designer<br />
@@ -130,15 +131,15 @@ export default function ClientDashboard() {
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-2" style={{ color: '#0E4D88' }}>My Role</h3>
+                  <h3 className="text-lg font-semibold mb-2 text-neutral-950">My Role</h3>
                   <p className="text-gray-700">Product designer</p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-2" style={{ color: '#0E4D88' }}>Company</h3>
+                  <h3 className="text-lg font-semibold mb-2 text-neutral-950">Company</h3>
                   <p className="text-gray-700">Buildertrend</p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-2" style={{ color: '#0E4D88' }}>Impact</h3>
+                  <h3 className="text-lg font-semibold mb-2 text-neutral-950">Impact</h3>
                   <p className="text-gray-700">
                     Reduced churn by 28%, and improved client satisfaction<br />
                     To-Dos saw a 42% increase in completion time.<br />
@@ -151,16 +152,39 @@ export default function ClientDashboard() {
 
           {/* Problem & Opportunity */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-6" style={{ color: '#2A78C0' }}>Problem & Opportunity</h2>
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-neutral-950">Problem & Opportunity</h2>
             <div className="prose prose-lg max-w-none">
               <div className="mb-6">
-                <h3 className="text-xl font-semibold mb-3" style={{ color: '#0E4D88' }}>The Problem</h3>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  The current client summary dashboard is outdated and lacks clear calls to action, often leaving new users staring at a confusing, empty state.
+                <h3 className="text-xl font-semibold mb-3 text-neutral-950">The Problem</h3>
+                <p className="text-lg leading-relaxed text-neutral-700">
+                  The dashboard was unintuitive and boring. Users didn&apos;t think anything was happening and it wasn&apos;t engaging enough. Builders also needed to teach their clients how to use it.
                 </p>
+                <figure className="not-prose mt-8 max-w-5xl">
+                  <p className="mb-3 text-sm font-semibold text-neutral-950">
+                    Before
+                    <span className="ml-2 font-normal text-neutral-600">
+                      — original client portal dashboard design
+                    </span>
+                  </p>
+                  <button
+                    type="button"
+                    className="w-full cursor-zoom-in overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50 text-left shadow-sm transition-opacity hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2"
+                    onClick={() => openLightbox("/blankdashboard.png")}
+                    aria-label="Open larger view: Before dashboard"
+                  >
+                    <img
+                      src="/blankdashboard.png"
+                      alt="Before: Buildertrend client portal dashboard with sparse layout and empty states"
+                      className="h-auto w-full object-contain"
+                    />
+                  </button>
+                  <figcaption className="mt-3 text-sm text-neutral-500">
+                    Screenshot of the prior &ldquo;Before&rdquo; experience homeowners saw when logging in.
+                  </figcaption>
+                </figure>
               </div>
               <div className="mt-6">
-                <h3 className="text-xl font-semibold mb-3" style={{ color: '#0E4D88' }}>The Opportunity</h3>
+                <h3 className="text-xl font-semibold mb-3 text-neutral-950">The Opportunity</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   Transform the dashboard into an engaging, visually polished hub that reinforces the builder's professionalism from day one.
                 </p>
@@ -170,20 +194,29 @@ export default function ClientDashboard() {
 
           {/* Discovery & Research */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-6" style={{ color: '#2A78C0' }}>Discovery & Research</h2>
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-neutral-950">Discovery & Research</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 During discovery, we interviewed homeowners for the first time and uncovered a critical insight: the homeowner experience depends entirely on how engaged their builder is with the platform.
               </p>
             </div>
-            <div className="mt-8">
-              <img 
-                src="data.png" 
-                alt="Data visualization" 
-                className="w-full max-w-5xl mx-auto rounded-lg shadow-lg object-cover cursor-pointer hover:opacity-90 transition-opacity"
-                onClick={() => openLightbox('data.png')}
-              />
-            </div>
+            <figure className="not-prose mx-auto mt-8 max-w-5xl">
+              <button
+                type="button"
+                className="w-full cursor-zoom-in overflow-hidden rounded-lg text-left shadow-lg transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2"
+                onClick={() => openLightbox("data.png")}
+                aria-label="Open larger view: portal usage by area"
+              >
+                <img
+                  src="data.png"
+                  alt="Chart: share of visits by portal area after login"
+                  className="h-auto w-full object-cover"
+                />
+              </button>
+              <figcaption className="mt-3 text-center text-sm leading-relaxed text-neutral-500 sm:text-left">
+                These percentages represent where clients go the most once they log into the portal.
+              </figcaption>
+            </figure>
             <div className="grid md:grid-cols-2 gap-6 mt-8">
               <img 
                 src="interviews1.png" 
@@ -203,7 +236,7 @@ export default function ClientDashboard() {
           {/* The Word Bank Activity */}
           <section className="mb-16">
             <div className="prose prose-lg max-w-none">
-              <h3 className="text-xl font-semibold mb-3" style={{ color: '#0E4D88' }}>The Word Bank Activity</h3>
+              <h3 className="text-xl font-semibold mb-3 text-neutral-950">The Word Bank Activity</h3>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 To bridge the gap between qualitative interviews and functional design, I developed a Word Bank Activity. I asked 20–30 customers to rank their top six most-checked items when logging into Buildertrend.
               </p>
@@ -244,7 +277,7 @@ export default function ClientDashboard() {
 
           {/* Themes & Opportunity Areas */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-6" style={{ color: '#2A78C0' }}>Themes & Opportunity Areas</h2>
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-neutral-950">Themes & Opportunity Areas</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 We organized our research findings into four key themes to guide the redesign:
@@ -260,7 +293,7 @@ export default function ClientDashboard() {
 
           {/* Wireframes & Mockups */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-6" style={{ color: '#2A78C0' }}>Wireframes & Mockups</h2>
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-neutral-950">Wireframes & Mockups</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 Following the word bank activity and data validation, I began creating rough wireframes to explore layout possibilities. While the team navigated technical constraints, we maintained a continuous feedback loop:
@@ -302,7 +335,7 @@ export default function ClientDashboard() {
 
           {/* Hi-fidelity Mockups and Testing */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-6" style={{ color: '#2A78C0' }}>Hi-fidelity Mockups and Testing</h2>
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-neutral-950">Hi-fidelity Mockups and Testing</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 After refining our initial concepts, we developed high-fidelity mockups and re-engaged our research participants for a round of rigorous usability testing. The feedback was overwhelmingly positive:
@@ -331,9 +364,9 @@ export default function ClientDashboard() {
 
           {/* Business Impact & Results */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-6" style={{ color: '#2A78C0' }}>Business Impact & Results</h2>
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-neutral-950">Business Impact & Results</h2>
             <div className="prose prose-lg max-w-none">
-              <h3 className="text-2xl font-bold mb-4" style={{ color: '#0E4D88' }}>Final Solution: A Premier Construction Experience</h3>
+              <h3 className="text-2xl font-bold mb-4 text-neutral-950">Final Solution: A Premier Construction Experience</h3>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 The redesigned client portal transforms the homeowner journey from a confusing "empty state" into a high-trust, data-rich environment.
               </p>

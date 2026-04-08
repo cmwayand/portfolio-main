@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Download, Check } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
+import MeshGradient from "@/components/MeshGradient";
 
 const TESTIMONIALS = [
   {
@@ -86,32 +87,7 @@ export default function Page() {
     <div className="min-h-screen bg-white text-neutral-900">
       {/* Hero + nav: mesh gradient, wide margins, reference-style layout */}
       <div className="relative overflow-hidden bg-white">
-        <div
-          className="pointer-events-none absolute inset-0 opacity-100"
-          aria-hidden
-        >
-          <div
-            className="absolute -top-32 left-[10%] h-[420px] w-[520px] rounded-full blur-[100px]"
-            style={{
-              background:
-                "radial-gradient(circle, rgba(165, 155, 240, 0.72) 0%, transparent 72%)",
-            }}
-          />
-          <div
-            className="absolute -top-24 right-[5%] h-[380px] w-[480px] rounded-full blur-[90px]"
-            style={{
-              background:
-                "radial-gradient(circle, rgba(245, 185, 215, 0.66) 0%, transparent 72%)",
-            }}
-          />
-          <div
-            className="absolute top-0 left-1/2 h-[360px] w-[600px] -translate-x-1/2 rounded-full blur-[110px]"
-            style={{
-              background:
-                "radial-gradient(circle, rgba(140, 205, 235, 0.62) 0%, transparent 70%)",
-            }}
-          />
-        </div>
+        <MeshGradient />
 
         <SiteHeader />
 
@@ -223,6 +199,41 @@ export default function Page() {
         </section>
       </div>
 
+      {/* Impact metrics — below hero, before Recent Work */}
+      <section
+        className="border-t border-neutral-200 bg-white px-6 py-10 sm:px-10 sm:py-12 md:py-14 lg:px-16 xl:px-20"
+        aria-label="Key results"
+      >
+        <div className="mx-auto max-w-7xl">
+          <ul className="grid grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-8 md:gap-12">
+            <li className="text-center sm:text-left">
+              <p className="text-4xl font-bold tracking-tight text-neutral-950 sm:text-5xl">
+                28%
+              </p>
+              <p className="mt-2 text-base leading-snug text-neutral-600">
+                Reduced churn
+              </p>
+            </li>
+            <li className="text-center sm:text-left">
+              <p className="text-4xl font-bold tracking-tight text-neutral-950 sm:text-5xl">
+                97%
+              </p>
+              <p className="mt-2 text-base leading-snug text-neutral-600">
+                Improved completion time
+              </p>
+            </li>
+            <li className="text-center sm:text-left">
+              <p className="text-4xl font-bold tracking-tight text-neutral-950 sm:text-5xl">
+                44%
+              </p>
+              <p className="mt-2 text-base leading-snug text-neutral-600">
+                Increased adoption
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       {/* Recent Work Section */}
       <section id="work" className="px-6 sm:px-10 lg:px-16 xl:px-20 py-8 sm:py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
@@ -311,7 +322,7 @@ export default function Page() {
         <div className="mx-auto max-w-7xl">
           <div className="grid max-w-2xl grid-cols-3 items-center justify-items-center gap-4 sm:gap-8 md:mx-auto md:max-w-none md:flex md:flex-wrap md:justify-center md:gap-12 lg:gap-20">
             <a href="https://madisonauto.org/" target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-110">
-              <img src="maap.png" alt="MAAP" className="h-10 w-auto rounded border border-gray-300 opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 sm:h-12 md:h-16" />
+              <img src="maap.png" alt="MAAP" className="h-10 w-auto rounded border border-neutral-200 opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 sm:h-12 md:h-16" />
             </a>
             <a href="https://www.coconstruct.com/" target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-110">
               <img src="coconstruct.png" alt="CoConstruct" className="h-10 w-auto opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 sm:h-12 md:h-16" />
@@ -320,13 +331,13 @@ export default function Page() {
               <img src="buildertrend.png" alt="Buildertrend" className="h-10 w-auto opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 sm:h-12 md:h-16" />
             </a>
             <a href="https://www.shifthq.ai/" target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-110">
-              <img src="shiftai.png" alt="SHIFT" className="h-10 w-auto rounded border border-gray-300 opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 sm:h-12 md:h-16" />
+              <img src="shiftai.png" alt="SHIFT" className="h-10 w-auto rounded border border-neutral-200 opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 sm:h-12 md:h-16" />
             </a>
             <a href="https://www.wavydogdesign.com/" target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-110">
               <img src="wavydogdesign.png" alt="Wavy Dog Design" className="h-10 w-auto opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 sm:h-12 md:h-16" />
             </a>
             <a href="https://www.cargolabs.com/" target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-110">
-              <img src="cargolabs.png" alt="Cargo Labs" className="h-10 w-auto rounded border border-gray-300 opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 sm:h-12 md:h-16" />
+              <img src="cargolabs.png" alt="Cargo Labs" className="h-10 w-auto rounded border border-neutral-200 opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 sm:h-12 md:h-16" />
             </a>
           </div>
         </div>
@@ -338,7 +349,7 @@ export default function Page() {
         aria-label="Testimonials"
       >
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 md:mb-12">
+          <h2 className="mb-6 text-2xl font-bold tracking-tight text-neutral-950 sm:mb-8 sm:text-3xl md:mb-12 md:text-4xl">
             Testimonials
           </h2>
           <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">

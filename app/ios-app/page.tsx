@@ -35,7 +35,7 @@ export default function IOSApp() {
     <div className="min-h-screen bg-white overflow-x-hidden text-neutral-900">
       <HeroPageShell>
         <div className="max-w-6xl mx-auto">
-          <Link href="/" className="text-[#0E4D88] hover:underline mb-8 inline-block">← Back to Home</Link>
+          <Link href="/" className="mb-8 inline-block text-sm font-medium text-neutral-600 hover:text-neutral-900 hover:underline">← Back to Home</Link>
           
           {/* Header */}
           <div className="mb-12">
@@ -67,7 +67,7 @@ export default function IOSApp() {
 
           {/* Project Overview */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-6" style={{ color: '#2A78C0' }}>Project Overview</h2>
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-neutral-950">Project Overview</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 RoomSpark is an innovative iOS application that leverages AI technology to help users design and transform their living spaces. The app combines cutting-edge artificial intelligence with intuitive user experience design to bring interior design visions to life.
@@ -77,19 +77,19 @@ export default function IOSApp() {
               </p>
               <div className="grid md:grid-cols-2 gap-6 mt-8">
                 <div>
-                  <h3 className="text-lg font-semibold mb-2" style={{ color: '#0E4D88' }}>Team</h3>
+                  <h3 className="text-lg font-semibold mb-2 text-neutral-950">Team</h3>
                   <p className="text-gray-700">Product designer<br />Developer</p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-2" style={{ color: '#0E4D88' }}>My Role</h3>
+                  <h3 className="text-lg font-semibold mb-2 text-neutral-950">My Role</h3>
                   <p className="text-gray-700">Product designer, leading discovery, implementation, prototyping, user feedback, entire product lifecycle</p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-2" style={{ color: '#0E4D88' }}>Company</h3>
+                  <h3 className="text-lg font-semibold mb-2 text-neutral-950">Company</h3>
                   <p className="text-gray-700">RoomSpark</p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-2" style={{ color: '#0E4D88' }}>Impact</h3>
+                  <h3 className="text-lg font-semibold mb-2 text-neutral-950">Impact</h3>
                   <p className="text-gray-700">Saving people weeks of design time and thousands of dollars.</p>
                 </div>
               </div>
@@ -98,12 +98,12 @@ export default function IOSApp() {
 
           {/* Key Features */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-6" style={{ color: '#2A78C0' }}>Key Features</h2>
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-neutral-950">Key Features</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-gray-50 p-6 rounded-lg">
                 <div className="flex items-center gap-3 mb-3">
-                  <Sparkles className="w-6 h-6" style={{ color: '#0E4D88' }} />
-                  <h3 className="text-xl font-semibold" style={{ color: '#0E4D88' }}>AI-Powered Room Design</h3>
+                  <Sparkles className="w-6 h-6 text-neutral-950" />
+                  <h3 className="text-xl font-semibold text-neutral-950">AI-Powered Room Design</h3>
                 </div>
                 <p className="text-gray-700">
                   Advanced AI algorithms analyze room dimensions, lighting, and user preferences to generate personalized design recommendations.
@@ -111,8 +111,8 @@ export default function IOSApp() {
               </div>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <div className="flex items-center gap-3 mb-3">
-                  <Box className="w-6 h-6" style={{ color: '#0E4D88' }} />
-                  <h3 className="text-xl font-semibold" style={{ color: '#0E4D88' }}>3D Visualization</h3>
+                  <Box className="w-6 h-6 text-neutral-950" />
+                  <h3 className="text-xl font-semibold text-neutral-950">3D Visualization</h3>
                 </div>
                 <p className="text-gray-700">
                   Real-time 3D rendering allows users to see their design concepts come to life before making any physical changes.
@@ -120,8 +120,8 @@ export default function IOSApp() {
               </div>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <div className="flex items-center gap-3 mb-3">
-                  <Layout className="w-6 h-6" style={{ color: '#0E4D88' }} />
-                  <h3 className="text-xl font-semibold" style={{ color: '#0E4D88' }}>Intuitive Interface</h3>
+                  <Layout className="w-6 h-6 text-neutral-950" />
+                  <h3 className="text-xl font-semibold text-neutral-950">Intuitive Interface</h3>
                 </div>
                 <p className="text-gray-700">
                   Streamlined user experience that makes complex design tools accessible to users of all technical skill levels.
@@ -129,8 +129,8 @@ export default function IOSApp() {
               </div>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <div className="flex items-center gap-3 mb-3">
-                  <Link2 className="w-6 h-6" style={{ color: '#0E4D88' }} />
-                  <h3 className="text-xl font-semibold" style={{ color: '#0E4D88' }}>Seamless Integration</h3>
+                  <Link2 className="w-6 h-6 text-neutral-950" />
+                  <h3 className="text-xl font-semibold text-neutral-950">Seamless Integration</h3>
                 </div>
                 <p className="text-gray-700">
                   Connect with furniture retailers, contractors, and design professionals directly through the app.
@@ -141,19 +141,19 @@ export default function IOSApp() {
 
           {/* Design Process */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-6" style={{ color: '#2A78C0' }}>Design Process</h2>
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-neutral-950">Design Process</h2>
             <div className="space-y-6">
-              <div className="border-l-4 pl-6" style={{ borderColor: '#0E4D88' }}>
-                <h3 className="text-xl font-semibold mb-2" style={{ color: '#0E4D88' }}>Research & Discovery</h3>
+              <div className="border-l-4 border-l-neutral-950 pl-6">
+                <h3 className="text-xl font-semibold mb-2 text-neutral-950">Research & Discovery</h3>
               </div>
-              <div className="border-l-4 pl-6" style={{ borderColor: '#0E4D88' }}>
-                <h3 className="text-xl font-semibold mb-2" style={{ color: '#0E4D88' }}>Wireframing & Prototyping</h3>
+              <div className="border-l-4 border-l-neutral-950 pl-6">
+                <h3 className="text-xl font-semibold mb-2 text-neutral-950">Wireframing & Prototyping</h3>
               </div>
-              <div className="border-l-4 pl-6" style={{ borderColor: '#0E4D88' }}>
-                <h3 className="text-xl font-semibold mb-2" style={{ color: '#0E4D88' }}>UI Design & Iteration</h3>
+              <div className="border-l-4 border-l-neutral-950 pl-6">
+                <h3 className="text-xl font-semibold mb-2 text-neutral-950">UI Design & Iteration</h3>
               </div>
-              <div className="border-l-4 pl-6" style={{ borderColor: '#0E4D88' }}>
-                <h3 className="text-xl font-semibold mb-2" style={{ color: '#0E4D88' }}>Development Collaboration</h3>
+              <div className="border-l-4 border-l-neutral-950 pl-6">
+                <h3 className="text-xl font-semibold mb-2 text-neutral-950">Development Collaboration</h3>
               </div>
             </div>
             <div className="mt-16">
@@ -168,7 +168,7 @@ export default function IOSApp() {
 
           {/* Research and Discovery */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-6" style={{ color: '#2A78C0' }}>Research and Discovery</h2>
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-neutral-950">Research and Discovery</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-gray-700 leading-relaxed">
                 I conducted an expansive competitor analysis, synthesizing App Store reviews, interface teardowns, and community discussions on Reddit. By mapping out common user frustrations, I identified four critical market gaps:
@@ -187,7 +187,7 @@ export default function IOSApp() {
 
           {/* Wireframing & Prototyping */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-6" style={{ color: '#2A78C0' }}>Wireframing & Prototyping</h2>
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-neutral-950">Wireframing & Prototyping</h2>
             <div className="mt-8 mb-6">
               <img 
                 src="roomsparkwireframes.png" 
@@ -205,7 +205,7 @@ export default function IOSApp() {
             {/* Project Challenge Banner */}
             <div className="mt-8 p-8 rounded-lg" style={{ backgroundColor: '#FEF3C7' }}>
               <div className="flex items-start gap-3">
-                <Info size={20} className="mt-1 flex-shrink-0" style={{ color: '#0E4D88' }} />
+                <Info size={20} className="mt-1 flex-shrink-0 text-neutral-950" />
                 <div>
                   <p className="text-lg text-gray-700 leading-relaxed">
                     <strong>The Challenge:</strong> Amazon Affiliate account closure due to strict 180-day '3-sale' rules. <strong>The Action:</strong> Proactively audited and re-engineered the affiliate workflow to ensure full compliance and a successful restart.
@@ -217,7 +217,7 @@ export default function IOSApp() {
 
           {/* Gathering interest before launch */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-6" style={{ color: '#2A78C0' }}>Gathering Interest with a Landing Page</h2>
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-neutral-950">Gathering Interest with a Landing Page</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-gray-700 leading-relaxed">
                 To validate market demand, I launched a pre-launch landing page with a Zoho-integrated CRM waitlist. This strategy allowed me to measure authentic user interest and build early momentum before finalizing the build.
@@ -235,7 +235,7 @@ export default function IOSApp() {
 
           {/* UI Design and Iteration */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-6" style={{ color: '#2A78C0' }}>UI Design and Iteration</h2>
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-neutral-950">UI Design and Iteration</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 The next step was a full UI refresh. The interface evolved significantly improving clarity and usability, while I simultaneously built a feature roadmap to break our larger vision into focused, shippable releases. Below is the updated UI.
@@ -243,7 +243,7 @@ export default function IOSApp() {
             </div>
             <div className="grid md:grid-cols-2 gap-6 mt-8">
               <div>
-                <h3 className="text-lg font-semibold mb-3" style={{ color: '#0E4D88' }}>Before</h3>
+                <h3 className="text-lg font-semibold mb-3 text-neutral-950">Before</h3>
                 <div
                   className="cursor-pointer hover:opacity-80 transition-opacity"
                   onClick={() => openLightbox('newui.png')}
@@ -256,7 +256,7 @@ export default function IOSApp() {
                 </div>
               </div>
               <div>
-                <h3 className="text-lg font-semibold mb-3" style={{ color: '#0E4D88' }}>After</h3>
+                <h3 className="text-lg font-semibold mb-3 text-neutral-950">After</h3>
                 <div
                   className="cursor-pointer hover:opacity-80 transition-opacity"
                   onClick={() => openLightbox('oldui.png')}
@@ -274,7 +274,7 @@ export default function IOSApp() {
                 This updated UI, designed in parallel with the product roadmap, helped us visualize how each feature works together as a cohesive system. The result is a more transparent, intuitive, and trustworthy experience for users.
               </p>
               
-              <h3 className="text-2xl font-bold mb-4" style={{ color: '#2A78C0' }}>Next Steps</h3>
+              <h3 className="mb-4 text-2xl font-bold tracking-tight text-neutral-950">Next Steps</h3>
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
                 We broke the roadmap into clear, high-impact release phases to ensure fast validation and steady momentum:
               </p>

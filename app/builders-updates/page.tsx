@@ -54,7 +54,7 @@ export default function BuildersUpdates() {
     <div className="min-h-screen bg-white overflow-x-hidden text-neutral-900">
       <HeroPageShell>
         <div className="max-w-6xl mx-auto">
-          <Link href="/" className="text-[#0E4D88] hover:underline mb-8 inline-block">← Back to Home</Link>
+          <Link href="/" className="mb-8 inline-block text-sm font-medium text-neutral-600 hover:text-neutral-900 hover:underline">← Back to Home</Link>
           
           {/* Header */}
           <div className="mb-12">
@@ -76,7 +76,7 @@ export default function BuildersUpdates() {
 
           {/* Image Gallery */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-8" style={{ color: '#2A78C0' }}>Buildertrend and CoConstruct Marketing Designs</h2>
+            <h2 className="mb-8 text-3xl font-bold tracking-tight text-neutral-950">Buildertrend and CoConstruct Marketing Designs</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {galleryImages.map((image, index) => (
                 <div 
@@ -136,7 +136,7 @@ export default function BuildersUpdates() {
                         <div className="space-y-6">
                           <div className="grid grid-cols-2 gap-4">
                             <div>
-                              <h3 className="text-lg font-semibold mb-2 text-center" style={{ color: '#0E4D88' }}>Before</h3>
+                              <h3 className="text-lg font-semibold mb-2 text-center text-neutral-950">Before</h3>
                               <img 
                                 src="beforeco.png" 
                                 alt="Before" 
@@ -144,7 +144,7 @@ export default function BuildersUpdates() {
                               />
                             </div>
                             <div>
-                              <h3 className="text-lg font-semibold mb-2 text-center" style={{ color: '#0E4D88' }}>After</h3>
+                              <h3 className="text-lg font-semibold mb-2 text-center text-neutral-950">After</h3>
                               <img 
                                 src="learnconstruction.png" 
                                 alt="After" 
@@ -154,22 +154,22 @@ export default function BuildersUpdates() {
                           </div>
                           <div className="bg-white rounded-lg p-6 space-y-4">
                             <div>
-                              <h3 className="text-lg font-bold mb-2" style={{ color: '#0E4D88' }}>Hypothesis</h3>
+                              <h3 className="text-lg font-bold mb-2 text-neutral-950">Hypothesis</h3>
                               <p className="text-gray-700">Updating the UI to modern brand standards and replacing the &quot;back-to-home&quot; navigation loop with in-line breadcrumb controls will significantly reduce user friction.</p>
                             </div>
                             <div>
-                              <h3 className="text-lg font-bold mb-2" style={{ color: '#0E4D88' }}>The Problem</h3>
+                              <h3 className="text-lg font-bold mb-2 text-neutral-950">The Problem</h3>
                               <p className="text-gray-700">The legacy UI was outdated and forced a &quot;pogo-sticking&quot; behavior: users had to return to the main landing page to switch between feature categories, disrupting their learning flow.</p>
                             </div>
                             <div>
-                              <h3 className="text-lg font-bold mb-2" style={{ color: '#0E4D88' }}>The Solution</h3>
+                              <h3 className="text-lg font-bold mb-2 text-neutral-950">The Solution</h3>
                               <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
                                 <li><strong>Modernized UI:</strong> Refreshed the page to align with current web and brand standards.</li>
                                 <li><strong>Dynamic Breadcrumbs:</strong> Integrated a category-switch dropdown directly into the breadcrumb trail, allowing users to pivot between sections instantly.</li>
                               </ul>
                             </div>
                             <div>
-                              <h3 className="text-lg font-bold mb-2" style={{ color: '#0E4D88' }}>Impact & Results</h3>
+                              <h3 className="text-lg font-bold mb-2 text-neutral-950">Impact & Results</h3>
                               <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
                                 <li><strong>34% Reduction in Time-to-Task:</strong> Users now navigate directly to content without redundant page loads.</li>
                                 <li><strong>Streamlined UX:</strong> Improved information architecture that keeps users in their &quot;flow&quot; state rather than forcing them back to the start.</li>

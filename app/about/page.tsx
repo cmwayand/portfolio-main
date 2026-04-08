@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import SiteHeader from "@/components/SiteHeader";
+import HeroPageShell from "@/components/HeroPageShell";
 import { Monitor, Award } from "lucide-react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
@@ -56,9 +56,8 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-white text-neutral-900">
-      <SiteHeader />
-
-      <main className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16 xl:px-20 pb-20 pt-4 sm:pt-6 md:pb-28">
+      <HeroPageShell>
+      <main className="pb-12 sm:pb-20 md:pb-28">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,340px)_1fr] lg:items-start lg:gap-16 xl:gap-20">
           {/* Portrait */}
           <div className="mx-auto w-full max-w-sm lg:mx-0 lg:max-w-none">
@@ -245,6 +244,7 @@ export default function AboutPage() {
           on={{ view: ({ index: i }) => setLightboxIndex(i) }}
         />
       </main>
+      </HeroPageShell>
     </div>
   );
 }

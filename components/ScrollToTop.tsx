@@ -34,11 +34,12 @@ export default function ScrollToTop() {
     <>
       {isVisible && (
         <button
+          type="button"
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
-          style={{ 
-            backgroundColor: '#0E4D88',
-            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06)'
+          className="fixed bottom-8 right-8 z-50 rounded-full bg-neutral-950 p-3 shadow-lg transition-all duration-300 hover:scale-110 hover:opacity-90"
+          style={{
+            boxShadow:
+              "0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06)",
           }}
           aria-label="Scroll to top"
         >

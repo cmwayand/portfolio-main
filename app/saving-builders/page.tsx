@@ -21,7 +21,9 @@ export default function SavingBuilders() {
   // All images on the page for unified lightbox
   const allImages = [
     { src: 'coverclientupdates.png', alt: 'Saving builders project cover' },
+    { src: 'beforeupdate.png', alt: 'Weekly progress report example in Word with photos' },
     { src: 'userstories.png', alt: 'User stories' },
+    { src: 'interviews.jpg', alt: 'Customer interview synthesis — FigJam board with notes and flows' },
     { src: '2.png', alt: 'Wireframe 2' },
     { src: '3.png', alt: 'Wireframe 3' },
     { src: '5.png', alt: 'Wireframe 5' },
@@ -84,7 +86,7 @@ export default function SavingBuilders() {
     <div className="min-h-screen bg-white overflow-x-hidden text-neutral-900">
       <HeroPageShell>
         <div className="max-w-6xl mx-auto">
-          <Link href="/" className="text-[#0E4D88] hover:underline mb-8 inline-block">← Back to Home</Link>
+          <Link href="/" className="mb-8 inline-block text-sm font-medium text-neutral-600 hover:text-neutral-900 hover:underline">← Back to Home</Link>
           
           {/* Header */}
           <div className="mb-12">
@@ -113,14 +115,14 @@ export default function SavingBuilders() {
 
           {/* Project Overview */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-6" style={{ color: '#2A78C0' }}>Project Overview</h2>
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-neutral-950">Project Overview</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 Using AI to generate automatic updates for clients, improving communication, and saving them 6+ hours a week.
               </p>
               <div className="grid md:grid-cols-2 gap-6 mt-8">
                 <div>
-                  <h3 className="text-lg font-semibold mb-2" style={{ color: '#0E4D88' }}>Team</h3>
+                  <h3 className="text-lg font-semibold mb-2 text-neutral-950">Team</h3>
                   <p className="text-gray-700">
                     Product manager<br />
                     Product designer<br />
@@ -129,29 +131,61 @@ export default function SavingBuilders() {
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-2" style={{ color: '#0E4D88' }}>My Role</h3>
+                  <h3 className="text-lg font-semibold mb-2 text-neutral-950">My Role</h3>
                   <p className="text-gray-700">Product designer</p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-2" style={{ color: '#0E4D88' }}>Company</h3>
+                  <h3 className="text-lg font-semibold mb-2 text-neutral-950">Company</h3>
                   <p className="text-gray-700">Buildertrend</p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-2" style={{ color: '#0E4D88' }}>Impact</h3>
+                  <h3 className="text-lg font-semibold mb-2 text-neutral-950">Impact</h3>
                   <p className="text-gray-700">Saved builders a combined 115 hours and improved completion time by 97%</p>
                 </div>
               </div>
             </div>
           </section>
 
+          {/* The Problem */}
+          <section className="mb-16">
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-neutral-950">
+              The Problem
+            </h2>
+            <div className="prose prose-lg max-w-none">
+              <p className="mb-6 text-lg leading-relaxed text-neutral-700">
+                Updating and communicating with clients was a constant challenge. Homeowners always wanted to know what was going on—and when they couldn&apos;t see progress clearly, they leaned on calls and texts to the builder, which piled onto everyone&apos;s plate.
+              </p>
+              <p className="mb-8 text-lg leading-relaxed text-neutral-700">
+                Many teams still built those updates in Word documents—writing copy, dropping in photos, and reformatting for each send. Producing materials like weekly progress reports could take <strong className="font-semibold text-neutral-900">hours every week</strong> per project.
+              </p>
+            </div>
+            <figure className="not-prose mx-auto max-w-5xl">
+              <button
+                type="button"
+                className="w-full cursor-zoom-in overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50 text-left shadow-sm transition-opacity hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2"
+                onClick={() => openLightbox("beforeupdate.png")}
+                aria-label="Open larger view: example weekly progress report in Word"
+              >
+                <img
+                  src="/beforeupdate.png"
+                  alt="Example weekly progress report built in Word with embedded construction photos"
+                  className="h-auto w-full object-contain"
+                />
+              </button>
+              <figcaption className="mt-3 text-sm leading-relaxed text-neutral-500">
+                Example of the kind of weekly progress report builders assembled by hand in Word—photos, bullets, and layout done manually.
+              </figcaption>
+            </figure>
+          </section>
+
           {/* Key Features */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-6" style={{ color: '#2A78C0' }}>Key Features</h2>
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-neutral-950">Key Features</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-gray-50 p-6 rounded-lg">
                 <div className="flex items-center gap-3 mb-3">
-                  <Sparkles size={24} style={{ color: '#0E4D88' }} />
-                  <h3 className="text-xl font-semibold" style={{ color: '#0E4D88' }}>AI-Powered Updates</h3>
+                  <Sparkles className="h-6 w-6 shrink-0 text-neutral-950" strokeWidth={1.75} />
+                  <h3 className="text-xl font-semibold text-neutral-950">AI-Powered Updates</h3>
                 </div>
                 <p className="text-gray-700">
                   Automated generation of client updates using AI technology to streamline communication.
@@ -159,8 +193,8 @@ export default function SavingBuilders() {
               </div>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <div className="flex items-center gap-3 mb-3">
-                  <Clock size={24} style={{ color: '#0E4D88' }} />
-                  <h3 className="text-xl font-semibold" style={{ color: '#0E4D88' }}>Time Savings</h3>
+                  <Clock className="h-6 w-6 shrink-0 text-neutral-950" strokeWidth={1.75} />
+                  <h3 className="text-xl font-semibold text-neutral-950">Time Savings</h3>
                 </div>
                 <p className="text-gray-700">
                   Significantly reduced time spent on client communication, saving builders 6+ hours per week.
@@ -168,8 +202,8 @@ export default function SavingBuilders() {
               </div>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <div className="flex items-center gap-3 mb-3">
-                  <MessageCircle size={24} style={{ color: '#0E4D88' }} />
-                  <h3 className="text-xl font-semibold" style={{ color: '#0E4D88' }}>Improved Communication</h3>
+                  <MessageCircle className="h-6 w-6 shrink-0 text-neutral-950" strokeWidth={1.75} />
+                  <h3 className="text-xl font-semibold text-neutral-950">Improved Communication</h3>
                 </div>
                 <p className="text-gray-700">
                   Enhanced client relationships through consistent, timely, and professional updates.
@@ -177,8 +211,8 @@ export default function SavingBuilders() {
               </div>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <div className="flex items-center gap-3 mb-3">
-                  <Workflow size={24} style={{ color: '#0E4D88' }} />
-                  <h3 className="text-xl font-semibold" style={{ color: '#0E4D88' }}>Streamlined Workflow</h3>
+                  <Workflow className="h-6 w-6 shrink-0 text-neutral-950" strokeWidth={1.75} />
+                  <h3 className="text-xl font-semibold text-neutral-950">Streamlined Workflow</h3>
                 </div>
                 <p className="text-gray-700">
                   We simplified the process for builders, allowing them to approve or edit automatic updates before sending to their clients.
@@ -190,8 +224,7 @@ export default function SavingBuilders() {
                 href="https://buildertrend.com/blog/client-portal-updates/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 rounded-lg font-medium transition-all hover:opacity-90 text-white"
-                style={{ backgroundColor: '#0E4D88' }}
+                className="px-6 py-3 rounded-lg font-medium transition-all hover:opacity-90 text-white bg-neutral-950"
               >
                 See it on Buildertrend
               </a>
@@ -200,26 +233,26 @@ export default function SavingBuilders() {
 
           {/* Design Process */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-6" style={{ color: '#2A78C0' }}>Design Process</h2>
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-neutral-950">Design Process</h2>
             <div className="space-y-6">
-              <div className="border-l-4 pl-6" style={{ borderColor: '#0E4D88' }}>
-                <h3 className="text-xl font-semibold mb-2" style={{ color: '#0E4D88' }}>Research & Discovery</h3>
+              <div className="border-l-4 border-l-neutral-950 pl-6">
+                <h3 className="text-xl font-semibold mb-2 text-neutral-950">Research & Discovery</h3>
               </div>
-              <div className="border-l-4 pl-6" style={{ borderColor: '#0E4D88' }}>
-                <h3 className="text-xl font-semibold mb-2" style={{ color: '#0E4D88' }}>Wireframing & Prototyping</h3>
+              <div className="border-l-4 border-l-neutral-950 pl-6">
+                <h3 className="text-xl font-semibold mb-2 text-neutral-950">Wireframing & Prototyping</h3>
               </div>
-              <div className="border-l-4 pl-6" style={{ borderColor: '#0E4D88' }}>
-                <h3 className="text-xl font-semibold mb-2" style={{ color: '#0E4D88' }}>UI Design & Iteration</h3>
+              <div className="border-l-4 border-l-neutral-950 pl-6">
+                <h3 className="text-xl font-semibold mb-2 text-neutral-950">UI Design & Iteration</h3>
               </div>
-              <div className="border-l-4 pl-6" style={{ borderColor: '#0E4D88' }}>
-                <h3 className="text-xl font-semibold mb-2" style={{ color: '#0E4D88' }}>Development Collaboration</h3>
+              <div className="border-l-4 border-l-neutral-950 pl-6">
+                <h3 className="text-xl font-semibold mb-2 text-neutral-950">Development Collaboration</h3>
               </div>
             </div>
           </section>
 
           {/* Research and Discovery */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-6" style={{ color: '#2A78C0' }}>Research and Discovery</h2>
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-neutral-950">Research and Discovery</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 After interviewing 20 customers, we mapped key decision points across the client update experience and wrote user stories from both the builder and homeowner perspectives.
@@ -232,7 +265,7 @@ export default function SavingBuilders() {
                   onClick={() => openLightbox('userstories.png')}
                 />
               </div>
-              <h3 className="text-2xl font-bold mt-8 mb-4" style={{ color: '#0E4D88' }}>Key Insights</h3>
+              <h3 className="text-2xl font-bold mt-8 mb-4 text-neutral-950">Key Insights</h3>
               <ul className="list-disc list-inside text-lg text-gray-700 leading-relaxed space-y-3 ml-4 mb-6">
                 <li><strong>Builders prioritize speed and accuracy.</strong><br />
                 As a builder, I want updates prepared automatically so I can review and publish them quickly.</li>
@@ -241,7 +274,7 @@ export default function SavingBuilders() {
                 <li><strong>Homeowners want clarity at a glance.</strong><br />
                 As a homeowner, I want to know what happened, what's next, and what I need to do.</li>
               </ul>
-              <h3 className="text-2xl font-bold mt-8 mb-4" style={{ color: '#0E4D88' }}>Design Decisions</h3>
+              <h3 className="text-2xl font-bold mt-8 mb-4 text-neutral-950">Design Decisions</h3>
               <ul className="list-disc list-inside text-lg text-gray-700 leading-relaxed space-y-3 ml-4 mb-6">
                 <li>Used AI-generated updates with a review-and-edit step for builders.</li>
                 <li>Designed a full-page editing experience to easily review text and photos in one place.</li>
@@ -253,9 +286,41 @@ export default function SavingBuilders() {
             </div>
           </section>
 
+          {/* Customer interviews — before wireframing */}
+          <section className="mb-16">
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-neutral-950">
+              Customer interviews
+            </h2>
+            <div className="prose prose-lg max-w-none">
+              <p className="mb-6 text-lg leading-relaxed text-neutral-700">
+                We interviewed our customers, learned their daily habits, frustrations, pain points, and what they need every day.
+              </p>
+              <p className="mb-8 text-lg leading-relaxed text-neutral-700">
+                We walked them through our thoughts on how this flow should look, observed how they used it, and captured the questions they had.
+              </p>
+            </div>
+            <figure className="not-prose mx-auto max-w-5xl">
+              <button
+                type="button"
+                className="w-full cursor-zoom-in overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50 text-left shadow-sm transition-opacity hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2"
+                onClick={() => openLightbox("interviews.jpg")}
+                aria-label="Open larger view: interview synthesis board"
+              >
+                <img
+                  src="/interviews.jpg"
+                  alt="FigJam board documenting customer interviews, flows, and notes"
+                  className="h-auto w-full object-contain"
+                />
+              </button>
+              <figcaption className="mt-3 text-sm leading-relaxed text-neutral-500">
+                Synthesis from interviews—habits, pain points, and walkthrough feedback captured on the board.
+              </figcaption>
+            </figure>
+          </section>
+
           {/* Wireframing & Prototyping */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-6" style={{ color: '#2A78C0' }}>Wireframing & Prototyping</h2>
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-neutral-950">Wireframing & Prototyping</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 <strong>Hypothesis:</strong> A single-page layout will outperform a multi-step stepper by reducing friction and speeding up edits.
@@ -290,9 +355,20 @@ export default function SavingBuilders() {
             </div>
           </section>
 
+          {/* Media management — tested in wireframes (Images 3 & 5) */}
+          <section className="mb-16">
+            <div className="prose prose-lg max-w-none">
+              <p className="text-lg leading-relaxed text-neutral-700">
+                <strong>Media Management:</strong> We tested large-grid thumbnail views (Image 3)
+                against a structured management step (Image 5) to see which allowed for faster
+                photo auditing.
+              </p>
+            </div>
+          </section>
+
           {/* Mobile */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-6" style={{ color: '#2A78C0' }}>Mobile</h2>
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-neutral-950">Mobile</h2>
             <div className="prose prose-lg max-w-none">
               <div className="space-y-4 mb-6">
                 <p className="text-lg text-gray-700 leading-relaxed">
@@ -324,13 +400,13 @@ export default function SavingBuilders() {
 
           {/* Development and Collaboration */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-6" style={{ color: '#2A78C0' }}>Development and Collaboration</h2>
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-neutral-950">Development and Collaboration</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 We partnered with developers to build an AI-driven workflow. The system automatically curates all project activity from the prior week, generating a draft every Friday. This gives builders a dedicated window to review and polish the content before it is dispatched to clients every Monday.
               </p>
               
-              <h3 className="text-2xl font-bold mt-8 mb-4" style={{ color: '#0E4D88' }}>Visual Validation</h3>
+              <h3 className="text-2xl font-bold mt-8 mb-4 text-neutral-950">Visual Validation</h3>
 
               <div className="space-y-6 mb-8">
                 <div>
@@ -351,12 +427,6 @@ export default function SavingBuilders() {
                       onClick={() => openLightbox('firstdraft.png')}
                     />
                   </div>
-                </div>
-
-                <div>
-                  <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                    <strong>Media Management:</strong> We tested large-grid thumbnail views (Image 3) against a structured management step (Image 5) to see which allowed for faster photo auditing.
-                  </p>
                 </div>
 
                 <div>
@@ -424,13 +494,13 @@ export default function SavingBuilders() {
 
           {/* Impact and Results */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-6" style={{ color: '#2A78C0' }}>Impact and Results</h2>
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-neutral-950">Impact and Results</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-gray-700 leading-relaxed mb-8">
                 From Beta to Global Launch We scaled from 30 to 150+ beta testers, iteratively refining the tool based on real-time feedback before a successful General Availability (GA) launch.
               </p>
               
-              <h3 className="text-2xl font-bold mt-8 mb-4" style={{ color: '#0E4D88' }}>Key Results</h3>
+              <h3 className="text-2xl font-bold mt-8 mb-4 text-neutral-950">Key Results</h3>
               
               <ul className="list-disc list-inside text-lg text-gray-700 leading-relaxed space-y-4 ml-4 mb-8">
                 <li><strong>Massive Efficiency:</strong> Builders report saving 6+ hours every week on project administration.</li>
@@ -438,9 +508,9 @@ export default function SavingBuilders() {
                 <li><strong>Strategic Retention:</strong> The AI-automated workflow became a "must-have" feature, successfully preventing churn to competitors by locking in user value.</li>
               </ul>
 
-              <h3 className="text-2xl font-bold mt-8 mb-4" style={{ color: '#0E4D88' }}>User Sentiment</h3>
+              <h3 className="text-2xl font-bold mt-8 mb-4 text-neutral-950">User Sentiment</h3>
               
-              <div className="bg-gray-50 p-6 rounded-lg border-l-4" style={{ borderColor: '#0E4D88' }}>
+              <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-l-neutral-950">
                 <p className="text-lg text-gray-700 leading-relaxed italic">
                   "The automated update has completely changed my Friday. What used to take days now happens in minutes."
                 </p>

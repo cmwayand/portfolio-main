@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Mail, Linkedin, Send } from "lucide-react";
-import SiteHeader from "@/components/SiteHeader";
+import HeroPageShell from "@/components/HeroPageShell";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -49,24 +49,24 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden text-neutral-900">
-      <SiteHeader />
-
-      <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16 xl:px-20 py-12 sm:py-16 md:py-20">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6" style={{ color: '#0E4D88' }}>
-            Let's Connect
+    <div className="min-h-screen overflow-x-hidden bg-white text-neutral-900">
+      <HeroPageShell>
+        <div className="mx-auto max-w-4xl pb-12 sm:pb-16 md:pb-20">
+          <h1 className="mb-4 text-3xl font-bold tracking-tight text-neutral-950 sm:mb-6 sm:text-4xl md:text-5xl lg:text-6xl">
+            Let&apos;s Connect
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 sm:mb-10 md:mb-12">
-            I'm always open to discussing new opportunities, collaborations, or just having a conversation about design and product development.
+          <p className="mb-8 text-base leading-relaxed text-neutral-600 sm:mb-10 sm:text-lg md:mb-12 md:text-xl">
+            I&apos;m always open to discussing new opportunities, collaborations, or just having a conversation about design and product development.
           </p>
 
           {/* Contact Form */}
-          <div className="bg-gray-50 p-8 rounded-lg border border-gray-200 mb-12">
-            <h2 className="text-2xl font-bold mb-6" style={{ color: '#0E4D88' }}>Send me a message</h2>
+          <div className="mb-12 rounded-2xl border border-neutral-200 bg-white/80 p-8 shadow-sm backdrop-blur-sm sm:p-10">
+            <h2 className="mb-6 text-2xl font-bold tracking-tight text-neutral-950">
+              Send me a message
+            </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="name" className="mb-2 block text-sm font-medium text-neutral-700">
                   Name
                 </label>
                 <input
@@ -76,12 +76,12 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0E4D88] focus:border-transparent outline-none transition-all"
+                  className="w-full rounded-full border border-neutral-200 bg-white px-5 py-3 text-neutral-900 shadow-sm outline-none transition-all placeholder:text-neutral-400 focus:border-neutral-300 focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2"
                   placeholder="Your name"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="email" className="mb-2 block text-sm font-medium text-neutral-700">
                   Email
                 </label>
                 <input
@@ -91,12 +91,12 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0E4D88] focus:border-transparent outline-none transition-all"
+                  className="w-full rounded-full border border-neutral-200 bg-white px-5 py-3 text-neutral-900 shadow-sm outline-none transition-all placeholder:text-neutral-400 focus:border-neutral-300 focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2"
                   placeholder="your.email@example.com"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="message" className="mb-2 block text-sm font-medium text-neutral-700">
                   Message
                 </label>
                 <textarea
@@ -106,15 +106,14 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0E4D88] focus:border-transparent outline-none transition-all resize-none"
+                  className="w-full resize-none rounded-2xl border border-neutral-200 bg-white px-5 py-3 text-neutral-900 shadow-sm outline-none transition-all placeholder:text-neutral-400 focus:border-neutral-300 focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2"
                   placeholder="Tell me about your project or just say hello..."
                 />
               </div>
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full md:w-auto px-8 py-3 text-white rounded-lg transition-all duration-300 hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-                style={{ backgroundColor: '#0E4D88' }}
+                className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-full bg-neutral-950 px-8 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 md:w-auto"
               >
                 {isSubmitting ? (
                   <>
@@ -142,17 +141,18 @@ export default function Contact() {
           </div>
 
           <div className="space-y-8">
-            {/* Email */}
-            <div className="bg-gray-50 p-8 rounded-lg border border-gray-200">
+            <div className="rounded-2xl border border-neutral-200 bg-white/80 p-8 shadow-sm backdrop-blur-sm">
               <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full" style={{ backgroundColor: '#0E4D88' }}>
-                  <Mail className="w-6 h-6 text-white" />
+                <div className="rounded-full bg-neutral-950 p-3">
+                  <Mail className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-bold mb-2" style={{ color: '#0E4D88' }}>Email</h2>
-                  <a 
-                    href="mailto:cmwayand@gmail.com" 
-                    className="text-lg text-gray-700 hover:text-[#0E4D88] transition-colors duration-300"
+                  <h2 className="mb-2 text-2xl font-bold tracking-tight text-neutral-950">
+                    Email
+                  </h2>
+                  <a
+                    href="mailto:cmwayand@gmail.com"
+                    className="text-lg text-neutral-700 transition-colors hover:text-neutral-950"
                   >
                     cmwayand@gmail.com
                   </a>
@@ -160,19 +160,20 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* LinkedIn */}
-            <div className="bg-gray-50 p-8 rounded-lg border border-gray-200">
+            <div className="rounded-2xl border border-neutral-200 bg-white/80 p-8 shadow-sm backdrop-blur-sm">
               <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full" style={{ backgroundColor: '#0E4D88' }}>
-                  <Linkedin className="w-6 h-6 text-white" />
+                <div className="rounded-full bg-neutral-950 p-3">
+                  <Linkedin className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-bold mb-2" style={{ color: '#0E4D88' }}>LinkedIn</h2>
-                  <a 
-                    href="https://www.linkedin.com/in/clairewayand/" 
+                  <h2 className="mb-2 text-2xl font-bold tracking-tight text-neutral-950">
+                    LinkedIn
+                  </h2>
+                  <a
+                    href="https://www.linkedin.com/in/clairewayand/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-lg text-gray-700 hover:text-[#0E4D88] transition-colors duration-300"
+                    className="text-lg text-neutral-700 transition-colors hover:text-neutral-950"
                   >
                     linkedin.com/in/clairewayand
                   </a>
@@ -182,15 +183,15 @@ export default function Contact() {
           </div>
 
           <div className="mt-12">
-            <Link 
-              href="/" 
-              className="text-[#0E4D88] hover:underline inline-flex items-center gap-2"
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 text-sm font-medium text-neutral-600 transition-colors hover:text-neutral-900 hover:underline"
             >
               ← Back to Home
             </Link>
           </div>
         </div>
-      </div>
+      </HeroPageShell>
     </div>
   );
 }
