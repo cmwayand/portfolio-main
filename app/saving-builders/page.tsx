@@ -355,12 +355,12 @@ export default function SavingBuilders() {
             </div>
           </section>
 
-          {/* Media management — tested in wireframes (Images 3 & 5) */}
+          {/* Media management — tested in wireframes (Images 3 & 2) */}
           <section className="mb-16">
             <div className="prose prose-lg max-w-none">
               <p className="text-lg leading-relaxed text-neutral-700">
                 <strong>Media Management:</strong> We tested large-grid thumbnail views (Image 3)
-                against a structured management step (Image 5) to see which allowed for faster
+                against a structured management step (Image 2) to see which allowed for faster
                 photo auditing.
               </p>
             </div>
@@ -411,7 +411,7 @@ export default function SavingBuilders() {
               <div className="space-y-6 mb-8">
                 <div>
                   <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                    <strong>AI Curation (Image 2 & 4):</strong> The platform automatically pulls "Upcoming items" and "Past items"—like framing inspections and deliveries—directly into the draft for builder review.
+                    <strong>AI Curation:</strong> The platform automatically pulls "Upcoming items" and "Past items"—like framing inspections and deliveries—directly into the draft for builder review.
                   </p>
                   <div className="grid grid-cols-2 gap-4 mt-4">
                     <img 

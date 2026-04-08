@@ -46,6 +46,15 @@ const TESTIMONIALS = [
   },
 ] as const;
 
+const COMPANY_LOGOS = [
+  { href: "https://madisonauto.org/", src: "/maap.png", label: "MAAP" },
+  { href: "https://www.coconstruct.com/", src: "/coconstruct.png", label: "CoConstruct" },
+  { href: "https://buildertrend.com/", src: "/buildertrend.png", label: "Buildertrend" },
+  { href: "https://www.shifthq.ai/", src: "/shiftai.png", label: "SHIFT" },
+  { href: "https://www.wavydogdesign.com/", src: "/wavydogdesign.png", label: "Wavy Dog Design" },
+  { href: "https://www.cargolabs.com/", src: "/cargolabs.png", label: "Cargo Labs" },
+] as const;
+
 export default function Page() {
   const [downloadStatus, setDownloadStatus] = useState<'idle' | 'loading' | 'success'>('idle');
   const [progress, setProgress] = useState(0);
@@ -187,9 +196,9 @@ export default function Page() {
 
             <div className="flex w-full justify-center sm:justify-end sm:-translate-x-[150px]">
               <motion.img
-                src="/icons.png"
+                src="/claire.png"
                 alt="Claire Wayand and design tools"
-                className="h-auto w-full max-w-[min(100%,11rem)] object-contain sm:max-w-[12.1rem] md:max-w-[14.3rem] lg:max-w-[16.5rem]"
+                className="h-auto w-full max-w-[min(100%,12.25rem)] object-contain sm:max-w-[13.5rem] md:max-w-[16rem] lg:max-w-[18.5rem]"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45 }}
@@ -318,28 +327,40 @@ export default function Page() {
       </section>
 
       {/* Company logos — below Recent Work */}
-      <section className="px-6 sm:px-10 lg:px-16 xl:px-20 py-8 sm:py-12 md:py-16">
+      <section
+        className="border-t border-neutral-200/80 bg-gradient-to-b from-neutral-50/80 to-white px-6 py-12 sm:px-10 sm:py-14 md:py-16 lg:px-16 xl:px-20"
+        aria-label="Companies and partners"
+      >
         <div className="mx-auto max-w-7xl">
-          <div className="grid max-w-2xl grid-cols-3 items-center justify-items-center gap-4 sm:gap-8 md:mx-auto md:max-w-none md:flex md:flex-wrap md:justify-center md:gap-12 lg:gap-20">
-            <a href="https://madisonauto.org/" target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-110">
-              <img src="maap.png" alt="MAAP" className="h-10 w-auto rounded border border-neutral-200 opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 sm:h-12 md:h-16" />
-            </a>
-            <a href="https://www.coconstruct.com/" target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-110">
-              <img src="coconstruct.png" alt="CoConstruct" className="h-10 w-auto opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 sm:h-12 md:h-16" />
-            </a>
-            <a href="https://buildertrend.com/" target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-110">
-              <img src="buildertrend.png" alt="Buildertrend" className="h-10 w-auto opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 sm:h-12 md:h-16" />
-            </a>
-            <a href="https://www.shifthq.ai/" target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-110">
-              <img src="shiftai.png" alt="SHIFT" className="h-10 w-auto rounded border border-neutral-200 opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 sm:h-12 md:h-16" />
-            </a>
-            <a href="https://www.wavydogdesign.com/" target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-110">
-              <img src="wavydogdesign.png" alt="Wavy Dog Design" className="h-10 w-auto opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 sm:h-12 md:h-16" />
-            </a>
-            <a href="https://www.cargolabs.com/" target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-110">
-              <img src="cargolabs.png" alt="Cargo Labs" className="h-10 w-auto rounded border border-neutral-200 opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 sm:h-12 md:h-16" />
-            </a>
+          <div className="mb-8 text-center sm:mb-10 md:text-left">
+            <p className="text-xs font-semibold uppercase tracking-wider text-neutral-500">
+              Experience across
+            </p>
+            <h2 className="mt-2 text-2xl font-bold tracking-tight text-neutral-950 sm:text-3xl">
+              Teams &amp; products
+            </h2>
+            <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-neutral-600 sm:text-base md:mx-0">
+              Organizations I&apos;ve shipped design work with—from B2B SaaS to agencies and startups.
+            </p>
           </div>
+          <ul className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 md:gap-5 xl:grid-cols-6">
+            {COMPANY_LOGOS.map(({ href, src, label }) => (
+              <li key={label} className="min-w-0">
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex h-32 items-center justify-center rounded-xl border border-neutral-200/90 bg-white px-4 py-4 shadow-sm transition-all duration-300 hover:border-neutral-300 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 sm:h-36 md:h-40"
+                >
+                  <img
+                    src={src}
+                    alt={label}
+                    className="max-h-14 w-auto max-w-[min(100%,10rem)] object-contain opacity-55 grayscale transition-all duration-300 group-hover:scale-[1.04] group-hover:opacity-100 group-hover:grayscale-0 sm:max-h-16 sm:max-w-[11.5rem] md:max-h-20 md:max-w-[13rem]"
+                  />
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
